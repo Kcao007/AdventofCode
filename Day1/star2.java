@@ -20,20 +20,28 @@ public class star2 {
                 char dir = str.charAt(0);
                 int num = Integer.parseInt(str.substring(1));
                 counter += num / 100;
+                //num between 0 and 99 now
                 num %= 100;
 
                 if(dir == 'L') {
                     num *= -1;
                 }
                 pos += num;
-
-                if(pos < 0) {
-                    pos += 100;
-                    counter++;
-                } else if(pos > 99) {
+                
+                if(pos > 99) {
                     pos -= 100;
                     counter++;
+                } else if(pos < 0) {
+                    if(pos - num != 0) {
+                        counter++;
+                    }
+                    pos += 100;
+                } else if(pos == 0) {
+                    counter++;
                 }
+                
+
+
 
             }
 
