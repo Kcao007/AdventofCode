@@ -39,18 +39,12 @@ public class star2 {
                 } else if(pos == 0) {
                     counter++;
                 }
-                
-
-
 
             }
-
             System.out.println(counter);
-
 
         } catch (FileNotFoundException e) {
             System.err.println("File not Found:" + e);
-        }
-        
+        } 
     }
 }

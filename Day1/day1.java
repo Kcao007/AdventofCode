@@ -37,13 +37,10 @@ public class day1 {
                     counter++;
                 } 
             }
-
             System.out.println(counter);
-
 
         } catch (FileNotFoundException e) {
             System.err.println("File not Found:" + e);
         }
-        
     }
 }
