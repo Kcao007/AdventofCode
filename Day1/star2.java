@@ -1,14 +1,14 @@
 /* Keith Cao
  * Day 1 of Advent of Code 2025
- * One Star
+ * Two Star
  */
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class day1 {
-    public static void main(String[] args) {
+public class star2 {
+        public static void main(String[] args) {
         try {
             File f = new File("./Day1/input.txt");
             Scanner s = new Scanner(f);
@@ -19,23 +19,22 @@ public class day1 {
                 String str = s.nextLine();
                 char dir = str.charAt(0);
                 int num = Integer.parseInt(str.substring(1));
+                counter += num / 100;
+                num %= 100;
 
                 if(dir == 'L') {
                     num *= -1;
                 }
                 pos += num;
 
-                while(pos < 0 || pos > 99) {
-                    if(pos < 0) {
-                        pos += 100;
-                    } else if(pos > 99) {
-                        pos -= 100;
-                    }
+                if(pos < 0) {
+                    pos += 100;
+                    counter++;
+                } else if(pos > 99) {
+                    pos -= 100;
+                    counter++;
                 }
 
-                if(pos == 0) {
-                    counter++;
-                } 
             }
 
             System.out.println(counter);
